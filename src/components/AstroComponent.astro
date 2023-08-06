@@ -1,0 +1,12 @@
+---
+const { title, description } = Astro.props;
+---
+<div class="max-w-xs border-2 border-solid border-cyan-900 rounded-md p-5">
+    <h2 class="text-cyan-500 text-xl">{title}</h2>
+    <p class="text-cyan-300">{description}</p>
+</div>
+
+<script define:vars={{title: title, des: description}}>
+    console.log('title: ', title);
+    console.log('description: ', des);
+</script>
