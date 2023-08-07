@@ -1,4 +1,5 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import VueComponent from "../components/VueComponent.vue";
 import ReactComponent from "../components/ReactComponent.jsx";
 import SvelteComponent from "../components/SvelteComponent.svelte";
@@ -6,53 +7,55 @@ import AstroComponent from "../components/AstroComponent.astro";
 import VueInput from "../components/VueInput.vue";
 ---
 
-<Fragment>
-  <p class="text-center my-10">Demo Unreactive</p>
-  <VueInput client:click/>
-  <div class="flex items-center justify-around mx-10">
-    <VueComponent>
-      <AstroComponent
-        slot="vue"
-        title="Vue unactive"
-        description="This is demo for Vue unreactive"
-      />
-    </VueComponent>
-    <ReactComponent>
-      <AstroComponent
-        title="React unactive"
-        description="This is demo for React unreactive"
-      />
-    </ReactComponent>
-    <SvelteComponent>
-      <AstroComponent
-        slot="svelte"
-        title="Svelte unactive"
-        description="This is demo for Svelte unreactive"
-      />
-    </SvelteComponent>
-  </div>
-  <hr class="mt-5" />
-  <p class="text-center my-10">Demo reactive</p>
-  <div class="flex items-center justify-around mx-10">
-    <VueComponent client:idle>
-      <AstroComponent
-        slot="vue"
-        title="Vue reactive"
-        description="This is demo for Vue reactive"
-      />
-    </VueComponent>
-    <ReactComponent client:load>
-      <AstroComponent
-        title="React reactive"
-        description="This is demo for React reactive"
-      />
-    </ReactComponent>
-    <SvelteComponent client:only="svelte">
-      <AstroComponent
-        slot="svelte"
-        title="Svelte reactive"
-        description="This is demo for Svelte reactive"
-      />
-    </SvelteComponent>
-  </div>
-</Fragment>
+<Layout title="Welcome to Astro.">
+  <Fragment>
+    <p class="text-center my-10">Demo Unreactive</p>
+    <VueInput client:click />
+    <div class="flex items-center justify-around mx-10">
+      <VueComponent>
+        <AstroComponent
+          slot="vue"
+          title="Vue unactive"
+          description="This is demo for Vue unreactive"
+        />
+      </VueComponent>
+      <ReactComponent>
+        <AstroComponent
+          title="React unactive"
+          description="This is demo for React unreactive"
+        />
+      </ReactComponent>
+      <SvelteComponent>
+        <AstroComponent
+          slot="svelte"
+          title="Svelte unactive"
+          description="This is demo for Svelte unreactive"
+        />
+      </SvelteComponent>
+    </div>
+    <hr class="mt-5" />
+    <p class="text-center my-10">Demo reactive</p>
+    <div class="flex items-center justify-around mx-10">
+      <VueComponent client:idle>
+        <AstroComponent
+          slot="vue"
+          title="Vue reactive"
+          description="This is demo for Vue reactive"
+        />
+      </VueComponent>
+      <ReactComponent client:load>
+        <AstroComponent
+          title="React reactive"
+          description="This is demo for React reactive"
+        />
+      </ReactComponent>
+      <SvelteComponent client:only="svelte">
+        <AstroComponent
+          slot="svelte"
+          title="Svelte reactive"
+          description="This is demo for Svelte reactive"
+        />
+      </SvelteComponent>
+    </div>
+  </Fragment>
+</Layout>

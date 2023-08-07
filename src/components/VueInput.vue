@@ -6,10 +6,10 @@ const handleBlur = () => {
   console.log("Blur");
 };
 const handleClick = () => {
-    console.log("Click");
-}
+  console.log("Click");
+};
 const handleOnchange = (e) => {
-    console.log(e.target.value);
+  console.log(e.target.value);
 };
 </script>
 
@@ -23,6 +23,8 @@ const handleOnchange = (e) => {
       placeholder="Vue Input"
       @change="handleOnchange"
     />
-    <button class="ml-5 border-2 rounded p-2" @click="handleClick">Click</button>
+    <button class="ml-5 border-2 rounded p-2" @click="handleClick">
+      Click
+    </button>
   </div>
 </template>
