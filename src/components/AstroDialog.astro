@@ -1,0 +1,21 @@
+---
+---
+
+<div class="mt-10 text-blue-600" id="dialog" style="display: none">
+  Hello nanostore!
+</div>
+
+<script>
+  import { isOpen } from '../store/index';
+
+  // Listen to changes in the store, and show/hide the dialog accordingly
+  isOpen.subscribe((open) => {
+    if (open) {
+      document.getElementById('dialog').style.display = 'block';
+    } else {
+      document.getElementById('dialog').style.display = 'none';
+    }
+  });
+
+  // document.getElementById('openDialog').addEventListener('click', openDialog);
+</script>

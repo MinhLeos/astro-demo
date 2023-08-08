@@ -1,0 +1,16 @@
+---
+import VueListUsers from "../components/VueListUsers.vue";
+import SvelteListUser from "../components/SvelteListUser.svelte";
+import ReactListUsers from "../components/ReactListUsers.jsx";
+import AstroListUsers from "../components/AstroListUsers.astro";
+---
+
+<Fragment>
+  <h1 class="text-center my-10 text-2xl">Fetching Data</h1>
+  <div class="flex items-center justify-around">
+    <SvelteListUser client:load />
+    <ReactListUsers client:load />
+    <VueListUsers client:load />
+    <AstroListUsers />
+  </div>
+</Fragment>

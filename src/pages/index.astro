@@ -5,10 +5,12 @@ import ReactComponent from "../components/ReactComponent.jsx";
 import SvelteComponent from "../components/SvelteComponent.svelte";
 import AstroComponent from "../components/AstroComponent.astro";
 import VueInput from "../components/VueInput.vue";
+import Middleware from "../components/Middleware.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Fragment>
+    <Middleware />
     <p class="text-center my-10">Demo Unreactive</p>
     <VueInput client:click />
     <div class="flex items-center justify-around mx-10">

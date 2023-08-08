@@ -1,0 +1,13 @@
+---
+const data = Astro.locals;
+---
+
+<Fragment>
+  <div class="my-10 text-lg text-center">
+    <h2>{data.title}</h2>
+    <p>{data.description}</p>
+    <p>{data.name}</p>
+    <p>{data.welcomeTitle()}</p>
+  </div>
+  <hr />
+</Fragment>
