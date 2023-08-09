@@ -6,26 +6,39 @@ import VueButton from '../components/DemoNanostore/VueButton.vue';
 import VueDialog from '../components/DemoNanostore/VueDialog.vue';
 import SvelteButton from '../components/DemoNanostore/SvelteButton.svelte';
 import SvelteDialog from '../components/DemoNanostore/SvelteDialog.svelte';
+import SvelteStore from '../components/DemoNanostoreDeep/SvelteStore.svelte';
+import VueStore from '../components/DemoNanostoreDeep/VueStore.vue';
 ---
 
 <Layout title="Astro">
   <h1 class="text-center text-3xl">Nanostore</h1>
   <hr class="my-10" />
-  <div class="flex flex-col items-center justify-center">
-    <h2 class="text-2xl">Astro Component</h2>
-    <AstroButton />
-    <AstroDialog />
+  <div class="flex items-center justify-around">
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-2xl">Astro Component</h2>
+      <AstroButton />
+      <AstroDialog />
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-2xl">Vue Component</h2>
+      <VueButton client:load />
+      <VueDialog client:load />
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-2xl">Svelte Component</h2>
+      <SvelteButton client:load />
+      <SvelteDialog client:load />
+    </div>
   </div>
   <hr class="my-10" />
-  <div class="flex flex-col items-center justify-center">
-    <h2 class="text-2xl">Vue Component</h2>
-    <VueButton client:load />
-    <VueDialog client:load />
-  </div>
-  <hr class="my-10" />
-  <div class="flex flex-col items-center justify-center">
-    <h2 class="text-2xl">Svelte Component</h2>
-    <SvelteButton client:load />
-    <SvelteDialog client:load />
+  <div class="flex items-start justify-around">
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-2xl">Svelte Store Deep</h2>
+      <SvelteStore client:load />
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h2 class="text-2xl">Vue Store Deep</h2>
+      <VueStore client:load />
+    </div>
   </div>
 </Layout>
