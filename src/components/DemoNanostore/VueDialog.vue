@@ -1,5 +1,5 @@
 <script setup>
-import { isOpenVue } from '../store/index.ts';
+import { isOpenVue } from '../../store/index.ts';
 import { useStore } from '@nanostores/vue';
 
 // read the store value with the `useStore` hook

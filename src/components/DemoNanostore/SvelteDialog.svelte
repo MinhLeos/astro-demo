@@ -1,5 +1,5 @@
 <script>
-  import { isOpenSvelte } from '../store/index.ts';
+  import { isOpenSvelte } from '../../store/index.ts';
 </script>
 
 {#if $isOpenSvelte}

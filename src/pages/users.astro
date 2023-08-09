@@ -1,11 +1,12 @@
 ---
-import VueListUsers from "../components/VueListUsers.vue";
-import SvelteListUser from "../components/SvelteListUser.svelte";
-import ReactListUsers from "../components/ReactListUsers.jsx";
-import AstroListUsers from "../components/AstroListUsers.astro";
+import Layout from '../layouts/Layout.astro';
+import VueListUsers from '../components/DemoFetchData/VueListUsers.vue';
+import SvelteListUser from '../components/DemoFetchData/SvelteListUser.svelte';
+import ReactListUsers from '../components/DemoFetchData/ReactListUsers.jsx';
+import AstroListUsers from '../components/DemoFetchData/AstroListUsers.astro';
 ---
 
-<Fragment>
+<Layout title="Astro">
   <h1 class="text-center my-10 text-2xl">Fetching Data</h1>
   <div class="flex items-center justify-around">
     <SvelteListUser client:load />
@@ -13,4 +14,4 @@ import AstroListUsers from "../components/AstroListUsers.astro";
     <VueListUsers client:load />
     <AstroListUsers />
   </div>
-</Fragment>
+</Layout>

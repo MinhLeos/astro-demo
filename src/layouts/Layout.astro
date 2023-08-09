@@ -17,9 +17,32 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <nav class="layout">
+      <a class="layout-link" href="/">Home</a>
+      <a class="layout-link" href="/endpoints">Demo Endpoint</a>
+      <a class="layout-link" href="/store">Demo Nanostore</a>
+      <a class="layout-link" href="/users">Demo Fetch Data</a>
+    </nav>
     <slot />
   </body>
 </html>
+<style is:inline>
+  .layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .layout-link {
+    color: rgb(245, 158, 11);
+    margin: 1rem;
+  }
+  .layout-link:hover {
+    color: rgb(170, 119, 30);
+  }
+  .layout-link:active {
+    color: rgb(102, 77, 34);
+  }
+</style>
 <style is:global>
   :root {
     --accent: 136, 58, 234;

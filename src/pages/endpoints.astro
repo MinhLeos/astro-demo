@@ -1,8 +1,11 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import VueFeedbackForm from '../components/VueFeedbackForm.vue';
 ---
 
-<div class="flex flex-col mx-auto items-center">
-  <p>EndPoints</p>
-  <VueFeedbackForm client:load />
-</div>
+<Layout title="Astro">
+  <div class="flex flex-col mx-auto items-center">
+    <p>EndPoints</p>
+    <VueFeedbackForm client:load />
+  </div>
+</Layout>
