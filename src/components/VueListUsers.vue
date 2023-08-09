@@ -1,17 +1,25 @@
 <script setup>
-import { ref } from "vue";
+import axios from 'axios';
+import { ref } from 'vue';
 const listUsers = ref([]);
 
-fetch(`https://64d1e94bf8d60b174361173e.mockapi.io/api/v1/users`)
-  .then((res) => res.json())
-  .then((data) => {
-    if (data?.length > 0) {
-      listUsers.value = data;
-    }
-  })
-  .catch((err) => {
-    console.log("Error", err);
-  });
+// fetch(`https://64d1e94bf8d60b174361173e.mockapi.io/api/v1/users`)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     if (data?.length > 0) {
+//       listUsers.value = data;
+//     }
+//   })
+//   .catch((err) => {
+//     console.log('Error', err);
+//   });
+const res = await axios({
+  method: 'get',
+  url: 'https://64d1e94bf8d60b174361173e.mockapi.io/api/v1/users',
+});
+if (res.data?.length > 0) {
+  listUsers.value = res.data;
+}
 </script>
 
 <template>
