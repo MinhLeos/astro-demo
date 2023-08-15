@@ -1,0 +1,16 @@
+---
+// import { ViewTransitions } from 'astro:transitions';
+import Layout from '../layouts/Layout.astro';
+import VueTransitions from '../components/Transition/VueTransition.vue';
+import VueButton from '../components/DemoNanostore/VueButton.vue';
+import AstroCounter from '../components/Transition/AstroCounter.astro';
+---
+
+<Layout title="Astro">
+  <VueTransitions client:load transition:persist transition:name="counter" />
+  <hr />
+  <hr />
+  <AstroCounter />
+  <VueButton client:load />
+  <a href="/new-transition">Go to new transition</a>
+</Layout>

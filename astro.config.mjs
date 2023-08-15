@@ -1,25 +1,28 @@
-import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
-import vue from "@astrojs/vue";
-import svelte from "@astrojs/svelte";
-import tailwind from "@astrojs/tailwind";
-import node from "@astrojs/node";
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import vue from '@astrojs/vue';
+import svelte from '@astrojs/svelte';
+import tailwind from '@astrojs/tailwind';
+import node from '@astrojs/node';
 
-import customDirective from "./src/directives/index.ts";
-import testHooks from "./src/hooks/index.ts";
+import customDirective from './src/directives/index.ts';
+import testHooks from './src/hooks/index.ts';
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    viewTransitions: true,
+  },
   adapter: node({
-    mode: "standalone",
+    mode: 'standalone',
   }),
-  output: "server",
+  output: 'server',
   extensions: {
-    ".jsx": "react",
-    ".tsx": "react",
-    ".vue": "vue",
-    ".svelte": "svelte",
-    ".ts": "typescript",
+    '.jsx': 'react',
+    '.tsx': 'react',
+    '.vue': 'vue',
+    '.svelte': 'svelte',
+    '.ts': 'typescript',
   },
   integrations: [
     react(),
@@ -29,5 +32,5 @@ export default defineConfig({
     customDirective(),
     testHooks(),
   ],
-  server: ({ command }) => ({ port: command === "dev" ? 3000 : 3001 }),
+  server: ({ command }) => ({ port: command === 'dev' ? 3005 : 3001 }),
 });

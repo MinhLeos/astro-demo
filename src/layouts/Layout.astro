@@ -1,9 +1,11 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const abcd = import.meta;
 ---
 
 <!DOCTYPE html>
@@ -15,6 +17,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <nav class="layout">
@@ -22,46 +25,49 @@ const { title } = Astro.props;
       <a class="layout-link" href="/endpoints">Demo Endpoint</a>
       <a class="layout-link" href="/store">Demo Nanostore</a>
       <a class="layout-link" href="/users">Demo Fetch Data</a>
+      <a class="layout-link" href="/test">Demo Nanostore Deep</a>
     </nav>
-    <slot />
+    <main transition:animate="slide">
+      <slot />
+    </main>
+    <style is:inline>
+      .layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .layout-link {
+        color: rgb(245, 158, 11);
+        margin: 1rem;
+      }
+      .layout-link:hover {
+        color: rgb(170, 119, 30);
+      }
+      .layout-link:active {
+        color: rgb(102, 77, 34);
+      }
+    </style>
+    <style is:global>
+      :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          rgb(var(--accent-light)) 30%,
+          white 60%
+        );
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        /* background: #13151A; */
+        background-size: 224px;
+      }
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
+    </style>
   </body>
 </html>
-<style is:inline>
-  .layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .layout-link {
-    color: rgb(245, 158, 11);
-    margin: 1rem;
-  }
-  .layout-link:hover {
-    color: rgb(170, 119, 30);
-  }
-  .layout-link:active {
-    color: rgb(102, 77, 34);
-  }
-</style>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    /* background: #13151A; */
-    background-size: 224px;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-</style>

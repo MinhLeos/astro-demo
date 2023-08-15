@@ -1,0 +1,21 @@
+---
+const count = 0;
+---
+
+<div transition:persist>
+  <p id="paragrap">{count}</p>
+  <button id="btn-increase">Increase</button>
+</div>
+
+<script>
+  let count = 0;
+  const btnEle = document.getElementById('btn-increase');
+  const pEle = document.getElementById('paragrap');
+  btnEle &&
+    btnEle.addEventListener('click', () => {
+      count++;
+      if (pEle) {
+        pEle.innerText = '' + count;
+      }
+    });
+</script>

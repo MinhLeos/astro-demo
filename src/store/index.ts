@@ -15,7 +15,12 @@ export interface User {
 export const listUsers = deepMap<{ datas: User[] }>({ datas: [] });
 
 onMount(listUsers, () => {
+  if (import.meta.env.SSR) {
+    return;
+  }
   const getData = async () => {
+    console.log('----------');
+
     const res = await axios({
       method: 'get',
       url: 'https://64d1e94bf8d60b174361173e.mockapi.io/api/v1/users',
