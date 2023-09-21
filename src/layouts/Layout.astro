@@ -26,6 +26,7 @@ const abcd = import.meta;
       <a class="layout-link" href="/store">Demo Nanostore</a>
       <a class="layout-link" href="/users">Demo Fetch Data</a>
       <a class="layout-link" href="/test">Demo Nanostore Deep</a>
+      <a class="layout-link" href="/package">Demo Package Button</a>
     </nav>
     <main transition:animate="slide">
       <slot />
@@ -45,6 +46,9 @@ const abcd = import.meta;
       }
       .layout-link:active {
         color: rgb(102, 77, 34);
+      }
+      .layout-link:last-child {
+        color: #d00058;
       }
     </style>
     <style is:global>
@@ -67,6 +71,15 @@ const abcd = import.meta;
       code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
           DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
+      /* .why {
+        background-color: #b64040 !important;
+      } */
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
       }
     </style>
   </body>
